@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Nanisuru</string>
+    <string name="titleEdit">アクティビティ</string>
+    <string name="requiredLabel">*</string>
+    <string name="placeLabel">場所</string>
+    <string name="memoLabel">メモ</string>
+    <string name="privateLabel">公開設定</string>
+    <string name="publicBtn">公開</string>
+    <string name="privateBtn">非公開</string>
+    <string name="saveBtn">保存</string>
+    <string name="deleteBtn">削除</string>
 </resources>

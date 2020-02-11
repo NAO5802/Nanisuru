@@ -10,12 +10,11 @@ open class Item : RealmObject() {
 
     @Required
     var title: String = ""
-    @Required
-    var finished: Boolean = false
-    @Required
-    var private: Boolean = false
 
     var memo: String = ""
     var place: String = ""
+    var finished: Boolean = false
+    var private: Boolean = false
+
 
 }
