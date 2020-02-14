@@ -13,8 +13,7 @@ class NanisuruApplication : Application() {
         Stetho.initialize(
             Stetho.newInitializerBuilder(this)
                 .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-                .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
-                .build()
-        )
+                .enableWebKitInspector(RealmInspectorModulesProvider.builder(this).build())
+                .build())
     }
 }

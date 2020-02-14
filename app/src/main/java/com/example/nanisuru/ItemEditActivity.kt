@@ -30,13 +30,13 @@ class ItemEditActivity : AppCompatActivity() {
                 val nextId = (maxId?.toLong() ?: 0L) + 1
                 val item = db.createObject<Item>(nextId)
 
-                item.title = titleEdit.text.toString()
-                item.place = placeEdit.text.toString()
-                item.memo = memoEdit.text.toString()
-                when (rg.checkedRadioButtonId) {
-                    R.id.publicBtn -> item.private = false
-                    R.id.privateBtn ->  item.private = true
-                }
+                    item.title = titleEdit.text.toString()
+                    item.place = placeEdit.text.toString()
+                    item.memo = memoEdit.text.toString()
+                    when (rg.checkedRadioButtonId) {
+                        R.id.publicBtn -> item.private = false
+                        R.id.privateBtn ->  item.private = true
+                    }
             }
             Toast.makeText(this, "アクティビティを追加しました", Toast.LENGTH_SHORT)
                 .show()
