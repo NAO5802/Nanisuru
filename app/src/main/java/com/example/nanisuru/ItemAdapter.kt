@@ -11,25 +11,32 @@ import io.realm.RealmRecyclerViewAdapter
 class ItemAdapter(data: OrderedRealmCollection<Item>) :
     RealmRecyclerViewAdapter<Item, ItemAdapter.ViewHolder>(data, true){
 
+    private var listener: ((Long?)-> Unit)? = null
+
+    fun setOnItemClickListener(listener:(Long?)-> Unit) {
+        this.listener = listener
+    }
+
     init {
         setHasStableIds(true)
     }
 
     class ViewHolder(cell: View) : RecyclerView.ViewHolder(cell) {
         val title: TextView = cell.findViewById(android.R.id.text1)
-        val memo: TextView = cell.findViewById(android.R.id.text2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(android.R.layout.simple_list_item_2, parent, false)
+        val view = inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ItemAdapter.ViewHolder, position: Int) {
         val item: Item? =getItem(position)
         holder.title.text = item?.title
-        holder.memo.text = item?.memo
+        holder.itemView.setOnClickListener {
+            listener?.invoke(item?.id)
+        }
     }
 
     override fun getItemId(position: Int) : Long {

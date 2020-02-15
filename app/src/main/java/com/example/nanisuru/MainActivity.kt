@@ -11,29 +11,24 @@ import java.io.LineNumberReader
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        realm = Realm.getDefaultInstance()
-        list.layoutManager = LinearLayoutManager(this)
-
-        val items = realm.where<Item>().findAll()
-        val adapter = ItemAdapter(items)
-        list.adapter = adapter
 
         //　アイテム追加ボタン
         addBtn.setOnClickListener { view ->
             val intent = Intent(this, ItemEditActivity::class.java)
             startActivity(intent)
         }
+
+        // 一覧表示ボタン
+        indexBtn.setOnClickListener { view ->
+            val intent = Intent(this, ItemIndexActivity::class.java)
+            startActivity(intent)
+        }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        realm.close()
-    }
 
 
 }
