@@ -9,4 +9,5 @@
     <string name="privateBtn">非公開</string>
     <string name="saveBtn">保存</string>
     <string name="deleteBtn">削除</string>
+    <string name="requiredError">入力必須です</string>
 </resources>

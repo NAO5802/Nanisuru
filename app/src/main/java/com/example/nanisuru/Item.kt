@@ -14,7 +14,7 @@ open class Item : RealmObject() {
     var memo: String = ""
     var place: String = ""
     var finished: Boolean = false
-    var private: Boolean = false
+    var isPrivate: Boolean = false
 
 
 }

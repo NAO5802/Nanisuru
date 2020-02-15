@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         realm = Realm.getDefaultInstance()
         list.layoutManager = LinearLayoutManager(this)
+
         val items = realm.where<Item>().findAll()
         val adapter = ItemAdapter(items)
         list.adapter = adapter
