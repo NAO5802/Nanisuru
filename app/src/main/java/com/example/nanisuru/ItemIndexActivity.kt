@@ -2,12 +2,16 @@ package com.example.nanisuru
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
+import io.realm.RealmResults
 import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_item_index.*
 
@@ -22,18 +26,36 @@ class ItemIndexActivity : AppCompatActivity() {
         realm = Realm.getDefaultInstance()
         list.layoutManager = LinearLayoutManager(this)
 
-        //　未完了アイテム一覧を取得・表示
-        val items = realm.where<Item>().equalTo("finished", false).findAll()
-        val adapter = ItemAdapter(items)
-        list.adapter = adapter
+        // 表示するアイテムを取得
+        finishedSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    // nothing
+                }
 
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    val isFinished = finishedSpinner.selectedItemPosition
+                    val items = if (isFinished == 0 ) {
+                        realm.where<Item>().equalTo("finished", false).findAll()
+                    } else {
+                        realm.where<Item>().equalTo("finished", true).findAll()
+                    }
+                    val adapter = ItemAdapter(items)
+                    list.adapter = adapter
 
-        // アイテムがクリックされた時
-        adapter.setOnItemClickListener { id->
-            val intent = Intent(this, ItemEditActivity::class.java)
-                .putExtra("item_id", id)
-            startActivity(intent)
-        }
+                    // アイテムがクリックされた時
+                    adapter.setOnItemClickListener { id->
+                        val intent = Intent(this@ItemIndexActivity, ItemEditActivity::class.java)
+                            .putExtra("item_id", id)
+                        startActivity(intent)
+                    }
+                }
+            }
 
 
         // アイテムがスワイプされた時

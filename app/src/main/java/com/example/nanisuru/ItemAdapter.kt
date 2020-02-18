@@ -9,7 +9,7 @@ import io.realm.OrderedRealmCollection
 import io.realm.RealmRecyclerViewAdapter
 
 class ItemAdapter(data: OrderedRealmCollection<Item>) :
-    RealmRecyclerViewAdapter<Item, ItemAdapter.ViewHolder>(data, true){
+    RealmRecyclerViewAdapter<Item, ItemAdapter.ViewHolder>(data, true) {
 
     private var listener: ((Long?)-> Unit)? = null
 
