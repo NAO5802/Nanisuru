@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:entries="@array/finished_arr"
-        android:spinnerMode="dropdown"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/indexLabel" />
 

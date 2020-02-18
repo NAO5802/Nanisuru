@@ -59,7 +59,7 @@ class ItemIndexActivity : AppCompatActivity() {
 
 
         // アイテムがスワイプされた時
-        val mIth = ItemTouchHelper(
+        val itemTouchHelper = ItemTouchHelper(
             object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
                 override fun onMove(
                     recyclerView: RecyclerView,
@@ -81,8 +81,8 @@ class ItemIndexActivity : AppCompatActivity() {
                     }
                 }
             })
-        mIth.attachToRecyclerView(list)
-        list.addItemDecoration(mIth)
+        itemTouchHelper.attachToRecyclerView(list)
+        list.addItemDecoration(itemTouchHelper)
 
 
     }
