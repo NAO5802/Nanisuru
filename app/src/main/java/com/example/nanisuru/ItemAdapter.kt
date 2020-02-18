@@ -28,6 +28,7 @@ class ItemAdapter(data: OrderedRealmCollection<Item>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
+
         return ViewHolder(view)
     }
 
@@ -42,5 +43,7 @@ class ItemAdapter(data: OrderedRealmCollection<Item>) :
     override fun getItemId(position: Int) : Long {
         return getItem(position)?.id ?: 0
     }
+
+
 
 }
