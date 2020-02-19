@@ -11,4 +11,6 @@
     <string name="deleteBtn">削除</string>
     <string name="requiredError">入力必須です</string>
     <string name="indexLabel">アクティビティ一覧</string>
+    <string name="noticeLabel">（未完/完了）スワイプで切り替え</string>
+    <string name="mainText">Tap below!</string>
 </resources>
