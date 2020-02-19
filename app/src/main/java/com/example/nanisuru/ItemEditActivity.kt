@@ -25,19 +25,24 @@ class ItemEditActivity : AppCompatActivity(), ItemDeleteDialog.Listener {
             titleEdit.setText(item?.title)
             placeEdit.setText(item?.place)
             memoEdit.setText(item?.memo)
-            val rg = findViewById<RadioGroup>(R.id.privateSetting)
-            when (item?.isPrivate) {
-                false -> rg.check(R.id.publicBtn)
-                true -> rg.check(R.id.privateBtn)
-            }
+//　公開設定ボタン（一時使用停止）
+//            val rg = findViewById<RadioGroup>(R.id.privateSetting)
+//            when (item?.isPrivate) {
+//                false -> rg.check(R.id.publicBtn)
+//                true -> rg.check(R.id.privateBtn)
+//            }
             // 削除ボタン表示
             deleteBtn.visibility = View.VISIBLE
+            // タイトルテキスト(編集)
+            editLabel.setText(R.string.editLabel)
         } else {
-            // ラジオボタンの初期設定
-            val rg = findViewById<RadioGroup>(R.id.privateSetting)
-            rg.check(R.id.publicBtn)
+//            // ラジオボタンの初期設定
+//            val rg = findViewById<RadioGroup>(R.id.privateSetting)
+//            rg.check(R.id.publicBtn)
             // 削除ボタン非表示
             deleteBtn.visibility = View.INVISIBLE
+            // タイトルテキスト(追加)
+            editLabel.setText(R.string.addLabel)
         }
 
         // 保存ボタン
@@ -60,11 +65,11 @@ class ItemEditActivity : AppCompatActivity(), ItemDeleteDialog.Listener {
                             item.title = titleText
                             item.place = placeText
                             item.memo = memoText
-                            val rg = findViewById<RadioGroup>(R.id.privateSetting)
-                            when (rg.checkedRadioButtonId) {
-                                R.id.publicBtn ->   item.isPrivate = false
-                                R.id.privateBtn ->  item.isPrivate = true
-                            }
+//                            val rg = findViewById<RadioGroup>(R.id.privateSetting)
+//                            when (rg.checkedRadioButtonId) {
+//                                R.id.publicBtn ->   item.isPrivate = false
+//                                R.id.privateBtn ->  item.isPrivate = true
+//                            }
                         }
                         Toast.makeText(this, "アクティビティを追加しました", Toast.LENGTH_SHORT)
                             .show()
@@ -81,11 +86,11 @@ class ItemEditActivity : AppCompatActivity(), ItemDeleteDialog.Listener {
                             item?.title = titleText
                             item?.place = placeText
                             item?.memo = memoText
-                            val rg = findViewById<RadioGroup>(R.id.privateSetting)
-                            when (rg.checkedRadioButtonId) {
-                                R.id.publicBtn ->   item?.isPrivate = false
-                                R.id.privateBtn ->  item?.isPrivate = true
-                            }
+//                            val rg = findViewById<RadioGroup>(R.id.privateSetting)
+//                            when (rg.checkedRadioButtonId) {
+//                                R.id.publicBtn ->   item?.isPrivate = false
+//                                R.id.privateBtn ->  item?.isPrivate = true
+//                            }
                         }
                         Toast.makeText(this, "アクティビティを修正しました", Toast.LENGTH_SHORT)
                             .show()

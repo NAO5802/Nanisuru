@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/titleEdit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editLabel" />
 
     <EditText
         android:id="@+id/titleEdit"
@@ -31,11 +31,10 @@
         android:id="@+id/requiredLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/requiredLabel"
         android:textColor="@color/design_default_color_error"
         app:layout_constraintStart_toEndOf="@+id/titleLabel"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/titleLabel" />
 
     <TextView
         android:id="@+id/placeLabel"
@@ -84,48 +83,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/memoLabel" />
 
-    <TextView
-        android:id="@+id/privateLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/privateLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoEdit" />
+<!--    <TextView-->
+<!--        android:id="@+id/privateLabel"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="@string/privateLabel"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/memoEdit" />-->
 
-    <RadioGroup
-        android:id="@+id/privateSetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/privateLabel">
+<!--    <RadioGroup-->
+<!--        android:id="@+id/privateSetting"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/privateLabel">-->
 
-        <RadioButton
-            android:id="@+id/publicBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/publicBtn" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/publicBtn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/publicBtn" />-->
 
-        <RadioButton
-            android:id="@+id/privateBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/privateBtn" />
-    </RadioGroup>
+<!--        <RadioButton-->
+<!--            android:id="@+id/privateBtn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/privateBtn" />-->
+<!--    </RadioGroup>-->
 
-    <TextView
-        android:id="@+id/requiredLabel2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/requiredLabel"
-        android:textColor="@color/design_default_color_error"
-        app:layout_constraintStart_toEndOf="@+id/privateLabel"
-        app:layout_constraintTop_toBottomOf="@+id/memoEdit" />
+<!--    <TextView-->
+<!--        android:id="@+id/requiredLabel2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="@string/requiredLabel"-->
+<!--        android:textColor="@color/design_default_color_error"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/privateLabel"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/memoEdit" />-->
 
     <Button
         android:id="@+id/saveBtn"
@@ -150,4 +149,17 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/editLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/addLabel"
+        android:textColor="@color/navyText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
